@@ -43,7 +43,7 @@ export default function Category() {
             try {
                 const res = await request.get(`/top-headlines`, {
                     params: {
-                        apiKey: process.env.REACT_APP_API,
+                        apiKey: process.env.REACT_APP_API4,
                         category: category,
                         pageSize: '10',
                         page: page,

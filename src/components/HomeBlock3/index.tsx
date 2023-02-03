@@ -9,7 +9,7 @@ export default function HomeBlock3() {
             .get(`/top-headlines`, {
                 params: {
                     country: 'gb',
-                    apiKey: process.env.REACT_APP_API,
+                    apiKey: process.env.REACT_APP_API2,
                     pageSize: '3',
                     language: 'en',
                 },

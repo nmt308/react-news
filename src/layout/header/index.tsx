@@ -83,9 +83,7 @@ export default function Header(): React.ReactElement {
                                 </div>
                             </li>
                             <li className="nav-item @@contact__active">
-                                <a className="nav-link" href="contact.html">
-                                    Contact
-                                </a>
+                                <a className="nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>

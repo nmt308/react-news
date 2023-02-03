@@ -45,7 +45,7 @@ export default function Search() {
                 const res = await request.get(`/everything`, {
                     params: {
                         q: q,
-                        apiKey: process.env.REACT_APP_API,
+                        apiKey: process.env.REACT_APP_API5,
                         pageSize: '10',
                         page: page,
                         language: 'en',

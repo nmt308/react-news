@@ -10,7 +10,7 @@ export default function HomeBlock4({ category, className }: { category: string; 
             .get(`/top-headlines`, {
                 params: {
                     country: 'gb',
-                    apiKey: process.env.REACT_APP_API,
+                    apiKey: process.env.REACT_APP_API3,
                     category: category,
                     pageSize: '3',
                     language: 'en',
