@@ -7,6 +7,7 @@ export default function SkeletonLoading() {
                     <div className="col-sm-5 position-relative">
                         <div className="image-mobile w-100 h-100 d-flex justify-content-center align-items-center">
                             <Skeleton
+                                className="skeleton-avt"
                                 variant="rectangular"
                                 width="80%"
                                 height="80%"
@@ -28,7 +29,7 @@ export default function SkeletonLoading() {
                                 <li className="meta-item blog-lesson">
                                     <Skeleton
                                         variant="rectangular"
-                                        width="240px"
+                                        width="210px"
                                         height="16px"
                                         style={{ marginTop: '14px' }}
                                     />

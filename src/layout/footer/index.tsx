@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
     return (
         <section className="app-footer">
@@ -9,9 +11,9 @@ export default function Footer() {
                                 <a className="navbar-brand mb-3" href="index.html">
                                     <span className="fa fa-newspaper-o"></span> NewsBlog
                                 </a>
-                                <p className="copy-footer-28"> © 2020. All Rights Reserved. </p>
+                                <p className="copy-footer-28"> © 2023. All Rights Reserved. </p>
                                 <h5 className="mt-2">
-                                    Design by <a href="https://w3layouts.com/">W3Layouts</a>
+                                    Get articles with <a href="https://newsapi.org/">News API</a>
                                 </h5>
                             </div>
                             <div className="col-lg-8 row">
@@ -19,16 +21,16 @@ export default function Footer() {
                                     <h6 className="footer-title-28">Useful links</h6>
                                     <ul>
                                         <li>
-                                            <a href="#categories">food blogs</a>
+                                            <a href="#">Blogs</a>
                                         </li>
                                         <li>
-                                            <a href="#advertise">Advertise with us</a>
+                                            <a href="#">Advertise with us</a>
                                         </li>
                                         <li>
-                                            <a href="#authors">Our Authors</a>
+                                            <a href="#">Our Authors</a>
                                         </li>
                                         <li>
-                                            <a href="contact.html">Get in touch</a>
+                                            <a href="#">Get in touch</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -36,16 +38,16 @@ export default function Footer() {
                                     <h6 className="footer-title-28">Categories</h6>
                                     <ul>
                                         <li>
-                                            <a href="beauty.html">Beauty</a>
+                                            <Link to="/healthy">Healthy</Link>
                                         </li>
                                         <li>
-                                            <a href="fashion.html">Fashion and Style</a>
+                                            <Link to="/sports">Sports</Link>
                                         </li>
                                         <li>
-                                            <a href="#food"> Food and Wellness</a>
+                                            <Link to="/entertainment">Entertainment</Link>
                                         </li>
                                         <li>
-                                            <a href="#lifestyle">Lifestyle</a>
+                                            <Link to="/business">Business</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -53,24 +55,24 @@ export default function Footer() {
                                     <h6 className="footer-title-28">Social Media</h6>
                                     <ul className="social-icons">
                                         <li className="facebook">
-                                            <a href="#facebook">
+                                            <a href="#">
                                                 <span className="fa fa-facebook"></span> Facebook
                                             </a>
                                         </li>
                                         <li className="twitter">
                                             {' '}
-                                            <a href="#twitter">
+                                            <a href="#">
                                                 <span className="fa fa-twitter"></span> Twitter
                                             </a>
                                         </li>
                                         <li className="linkedin">
                                             {' '}
-                                            <a href="#linkedin">
+                                            <a href="#">
                                                 <span className="fa fa-linkedin"></span> Linkedin
                                             </a>
                                         </li>
                                         <li className="dribbble">
-                                            <a href="#dribbble">
+                                            <a href="#">
                                                 <span className="fa fa-dribbble"></span> Dribbble
                                             </a>
                                         </li>
