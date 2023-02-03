@@ -14,12 +14,12 @@ export default function Home() {
             <HomeSlide />
             <HomeBlock2 />
             <HomeBlock3 />
-            <HomeBlock4 className="w3l-homeblock2 py-5" category="Sports" />
-            <HomeBlock4 className="w3l-homeblock2 w3l-homeblock5 py-5" category="Business" />
-            <HomeBlock4 className="w3l-homeblock2 w3l-homeblock6 py-5" category="Entertainment" />
-            <div className="w3l-subscribe py-5">
+            <HomeBlock4 className="news-homeblock2 py-5" category="Sports" />
+            <HomeBlock4 className="news-homeblock2 news-homeblock5 py-5" category="Business" />
+            <HomeBlock4 className="news-homeblock2 news-homeblock6 py-5" category="Entertainment" />
+            <div className="news-subscribe py-5">
                 <div className="container py-lg-5 py-md-4">
-                    <div className="w3l-subscribe-content text-center bg-clr-white py-md-5 py-2">
+                    <div className="news-subscribe-content text-center bg-clr-white py-md-5 py-2">
                         <div className="py-5">
                             <h3 className="section-title-left mb-2">Subscribe to our newsletter!</h3>
                             <p className="mb-md-5 mb-4">

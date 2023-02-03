@@ -21,30 +21,48 @@ export default function Category() {
         navigate(`/category/${category}`, { page: value });
         setLoading(true);
     };
+    const renderArticles = () => {
+        if (articles.length > 0 && !loading) {
+            return articles.map((article) => {
+                return <ArticleWithAvt data={article} />;
+            });
+        }
+        if (articles.length === 0) {
+            if (loading) {
+                return Array.from(Array(10)).map((item) => <SkeletonLoading />);
+            } else {
+                return <div className="w-100 mt-5 text-center">No article was found. Please try again</div>;
+            }
+        }
+    };
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [page]);
     useEffect(() => {
         const getArticles = async () => {
-            const res = await request.get(`/top-headlines`, {
-                params: {
-                    apiKey: process.env.REACT_APP_API,
-                    category: category,
-                    pageSize: '10',
-                    page: page,
-                    language: 'en',
-                },
-            });
+            try {
+                const res = await request.get(`/top-headlines`, {
+                    params: {
+                        apiKey: process.env.REACT_APP_API,
+                        category: category,
+                        pageSize: '10',
+                        page: page,
+                        language: 'en',
+                    },
+                });
 
-            setArticles(res.data.articles);
-            setLoading(false);
-            setCount(res.data.totalResults);
+                setArticles(res.data.articles);
+                setLoading(false);
+                setCount(res.data.totalResults);
+            } catch {
+                setLoading(false);
+            }
         };
         getArticles();
     }, [page, category]);
 
     return (
-        <div className="w3l-homeblock2 w3l-homeblock5 py-5">
+        <div className="news-homeblock2 news-homeblock5 py-5">
             <div className="container pb-md-5">
                 <Box
                     sx={{
@@ -67,23 +85,19 @@ export default function Category() {
                     </Breadcrumbs>
                 </Box>
 
-                <div className="row">
-                    {articles.length > 0 && !loading
-                        ? articles.map((article) => {
-                              return <ArticleWithAvt data={article} />;
-                          })
-                        : Array.from(Array(10)).map((item) => <SkeletonLoading />)}
-                </div>
-                <ul className="site-pagination text-center mt-md-5 mt-4">
-                    <Stack spacing={2}>
-                        <Pagination
-                            count={Math.ceil(countPage) > 10 ? 10 : Math.ceil(countPage)}
-                            page={parseInt(page)}
-                            onChange={handleChange}
-                            shape="rounded"
-                        />
-                    </Stack>
-                </ul>
+                <div className="row">{renderArticles()}</div>
+                {articles.length > 0 && (
+                    <ul className="site-pagination text-center mt-md-5 mt-4">
+                        <Stack spacing={2}>
+                            <Pagination
+                                count={Math.ceil(countPage) > 10 ? 10 : Math.ceil(countPage)}
+                                page={parseInt(page)}
+                                onChange={handleChange}
+                                shape="rounded"
+                            />
+                        </Stack>
+                    </ul>
+                )}
             </div>
         </div>
     );

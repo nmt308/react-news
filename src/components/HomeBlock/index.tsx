@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 export default function HomeBlock() {
     return (
-        <section className="w3l-homeblock1 py-sm-5 py-4">
+        <section className="news-homeblock1 py-sm-5 py-4">
             <div className="container py-md-4">
                 <div className="grids-area-hny main-cont-wthree-fea row">
                     <div className="col-lg-3 col-6 grids-feature">

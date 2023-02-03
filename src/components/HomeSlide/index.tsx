@@ -8,7 +8,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 export default function HomeSlide() {
     return (
-        <section className="w3l-testimonials" id="testimonials">
+        <section className="news-testimonials" id="testimonials">
             <div className="testimonials pt-2 pb-5">
                 <div className="container pb-lg-5">
                     <OwlCarousel

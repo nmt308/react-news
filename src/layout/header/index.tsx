@@ -13,7 +13,7 @@ export default function Header(): React.ReactElement {
         navigate('/search', { q: value, page: 1 });
     };
     return (
-        <header className="w3l-header">
+        <header className="news-header">
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-sm-3 px-0">
                     <Link to="/" className="navbar-brand">

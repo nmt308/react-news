@@ -20,7 +20,7 @@ export default function HomeBlock2() {
             });
     });
     return (
-        <div className="w3l-homeblock2 py-5">
+        <div className="news-homeblock2 py-5">
             <div className="container py-lg-5 py-md-4">
                 <div className="row">
                     <div className="col-lg-8">

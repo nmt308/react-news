@@ -19,7 +19,7 @@ export default function HomeBlock3() {
             });
     });
     return (
-        <div className="w3l-homeblock3 py-5">
+        <div className="news-homeblock3 py-5">
             <div className="container py-lg-5 py-md-4">
                 <h3 className="section-title-left"> Most viewed today </h3>
                 <div className="row top-pics">
