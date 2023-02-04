@@ -7,6 +7,7 @@ import { Box, Breadcrumbs, Pagination } from '@mui/material';
 import { Stack } from '@mui/system';
 import { useNavigateSearch } from '../../CustomHook';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 export default function Search() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -15,11 +16,13 @@ export default function Search() {
     const page: any = searchParams.get('page') || 1;
     const q: string | null = searchParams.get('q');
     const countPage = count / 10;
-    console.log(count, countPage);
+
     const navigate = useNavigateSearch();
+
     const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
         navigate(`/search`, { q: q, page: value });
         setLoading(true);
+        setArticles([]);
     };
     const renderArticles = () => {
         if (articles.length > 0 && !loading) {
@@ -42,18 +45,29 @@ export default function Search() {
     useEffect(() => {
         const getArticles = async () => {
             try {
-                const res = await request.get(`/everything`, {
-                    params: {
-                        q: q,
-                        apiKey: process.env.REACT_APP_API5,
-                        pageSize: '10',
-                        page: page,
-                        language: 'en',
-                    },
-                });
-                setArticles(res.data.articles);
-                setLoading(false);
-                setCount(res.data.totalResults);
+                request
+                    .get('/article/getArticles', {
+                        params: {
+                            lang: 'eng',
+                            action: 'getArticles',
+                            keyword: q,
+                            includeArticleImage: true,
+                            articlesPage: page,
+                            articlesCount: 10,
+                            articlesSortBy: 'date',
+                            articlesSortByAsc: false,
+                            articlesArticleBodyLen: -1,
+                            resultType: 'articles',
+                            dataType: ['news', 'pr'],
+                            apiKey: process.env.REACT_APP_API_HOME1,
+                            forceMaxDataTimeWindow: 31,
+                        },
+                    })
+                    .then((res) => {
+                        setArticles(res.data.articles.results);
+                        setLoading(false);
+                        setCount(res.data.articles.pages);
+                    });
             } catch {
                 setLoading(false);
             }
@@ -86,12 +100,7 @@ export default function Search() {
                 {articles.length > 0 && (
                     <ul className="site-pagination text-center mt-md-5 mt-4">
                         <Stack spacing={2}>
-                            <Pagination
-                                count={Math.ceil(countPage) > 10 ? 10 : Math.ceil(countPage)}
-                                page={parseInt(page)}
-                                onChange={handleChange}
-                                shape="rounded"
-                            />
+                            <Pagination count={count} page={parseInt(page)} onChange={handleChange} shape="rounded" />
                         </Stack>
                     </ul>
                 )}

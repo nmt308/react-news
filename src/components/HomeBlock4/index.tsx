@@ -7,19 +7,28 @@ export default function HomeBlock4({ category, className }: { category: string; 
     const [articles, setArticles] = useState([]);
     useEffect(() => {
         request
-            .get(`/top-headlines`, {
+            .get('/article/getArticles', {
                 params: {
-                    country: 'gb',
-                    apiKey: process.env.REACT_APP_API3,
-                    category: category,
-                    pageSize: '3',
-                    language: 'en',
+                    lang: 'eng',
+                    action: 'getArticles',
+                    keyword: category,
+                    includeArticleImage: true,
+                    articlesPage: 1,
+                    articlesCount: 3,
+                    articlesSortBy: 'date',
+                    articlesSortByAsc: false,
+                    articlesArticleBodyLen: -1,
+                    resultType: 'articles',
+                    dataType: ['news', 'pr'],
+                    apiKey: process.env.REACT_APP_API_HOME1,
+                    forceMaxDataTimeWindow: 31,
                 },
             })
             .then((res) => {
-                setArticles(res.data.articles);
+                setArticles(res.data.articles.results);
             });
-    });
+    }, []);
+
     return (
         <div className={className}>
             <div className="container py-lg-5 py-md-4">

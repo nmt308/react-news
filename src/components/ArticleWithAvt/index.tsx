@@ -1,56 +1,33 @@
 import NullImage from '../../assets/images/NotImage.png';
-import { useNavigate } from 'react-router-dom';
-
-interface Article {
-    data: {
-        author: string;
-        urlToImage: string;
-        title: string;
-        description: string;
-        content: string;
-        source: { name: string };
-        publishedAt: string;
-        url: string;
-    };
-}
-
-export default function ArticleWithAvt({ data }: Article) {
-    const navigate = useNavigate();
-    const formatDate = (date: string): string => {
-        var d = new Date(date),
-            month = d.getMonth() + 1,
-            day = d.getDate(),
-            year = d.getFullYear();
-        return `${day}/${month}/${year}`;
-    };
-
+import { Link } from 'react-router-dom';
+import { IArticle } from '../../Interface/IArticle';
+export default function ArticleWithAvt({ data }: IArticle) {
     return (
         <div className="col-lg-6 mt-4">
-            <div className="bg-clr-white hover-box">
-                <div className="row">
+            <div className="bg-clr-white hover-box h-100">
+                <div className="row h-100">
                     <div className="col-sm-5 position-relative">
-                        <a className="image-mobile w-100 h-100 d-block" href={data.url} target="_blank">
+                        <Link className="image-mobile w-100 h-100 d-block" to={`/article/${data.uri}`}>
                             <img
                                 className="card-img-bottom d-block radius-image-full"
-                                src={data.urlToImage || NullImage}
-                                alt="Card"
+                                src={data.image || NullImage}
+                                alt={data.source.uri}
                             />
-                        </a>
+                        </Link>
                     </div>
-                    <div className="col-sm-7 card-body blog-details align-self">
-                        <a className="blog-desc" href={data.url} target="_blank">
+                    <div className="col-sm-7 card-body blog-details align-self" style={{ paddingLeft: '10px' }}>
+                        <Link className="blog-desc" to={`/article/${data.uri}`}>
                             {data.title}
-                        </a>
+                        </Link>
                         <div className="author align-items-center">
-                            <img src="assets/images/a3.jpg" alt="" className="img-fluid rounded-circle" />
                             <ul className="blog-meta">
                                 <li>
-                                    <a>{data.source.name || 'Ambe JohnBee'}</a>
+                                    <a>{data.source.title ?? data.author.name ?? '@John_Mathan'}</a>
                                 </li>
                                 <li className="meta-item blog-lesson">
-                                    <span className="meta-value">Published At: {formatDate(data.publishedAt)} </span>.{' '}
+                                    <span className="meta-value"> Published At {data.date} </span>
                                     <span className="meta-value ml-2">
-                                        <span className="fa fa-clock-o"></span> 1 min
+                                        <span className="fa fa-clock-o"></span> {data.time}
                                     </span>
                                 </li>
                             </ul>

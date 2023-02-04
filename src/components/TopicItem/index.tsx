@@ -8,8 +8,8 @@ export default function TopicItem() {
                 <h3 className="section-title-left mb-4"> Topics</h3>
                 <Link to="/category/health" className="topics-list">
                     <div className="list1">
-                        <span className="fa fa-stethoscope"></span>
-                        <h4>Healthy</h4>
+                        <span className="fa fa-bath"></span>
+                        <h4>Health</h4>
                     </div>
                 </Link>
                 <Link to="/category/sports" className="topics-list mt-3">
@@ -18,10 +18,10 @@ export default function TopicItem() {
                         <h4>Sports</h4>
                     </div>
                 </Link>
-                <Link to="/category/entertainment" className="topics-list mt-3">
+                <Link to="/category/recreation" className="topics-list mt-3">
                     <div className="list1">
                         <span className="fa fa-photo-film"></span>
-                        <h4>Entertainment</h4>
+                        <h4>Recreation</h4>
                     </div>
                 </Link>
                 <Link to="/category/business" className="topics-list mt-3">

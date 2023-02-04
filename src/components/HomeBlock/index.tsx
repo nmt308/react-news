@@ -7,8 +7,8 @@ export default function HomeBlock() {
                     <div className="col-lg-3 col-6 grids-feature">
                         <Link to="/category/health">
                             <div className="area-box">
-                                <span className="fa fa-stethoscope"></span>
-                                <h4 className="title-head">Healthy</h4>
+                                <span className="fa fa-bath"></span>
+                                <h4 className="title-head">Health</h4>
                             </div>
                         </Link>
                     </div>
@@ -21,10 +21,10 @@ export default function HomeBlock() {
                         </Link>
                     </div>
                     <div className="col-lg-3 col-6 grids-feature mt-lg-0 mt-md-4 mt-3">
-                        <Link to="/category/entertainment">
+                        <Link to="/category/recreation">
                             <div className="area-box">
                                 <span className="fa fa-photo-film"></span>
-                                <h4 className="title-head">Entertainment</h4>
+                                <h4 className="title-head">Recreation</h4>
                             </div>
                         </Link>
                     </div>

@@ -1,24 +1,35 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ArticleItem from '../../components/ArticleItem';
 import TopicItem from '../../components/TopicItem';
 import request from '../../utils/request';
+
 export default function HomeBlock2() {
-    //key f8e327afaffa440a8b386b8fa9b158f2
     const [articles, setArticles] = useState([]);
+
     useEffect(() => {
         request
-            .get(`/top-headlines`, {
+            .get('/article/getArticles', {
                 params: {
-                    country: 'gb',
-                    apiKey: process.env.REACT_APP_API1,
-                    pageSize: '4',
-                    language: 'en',
+                    lang: 'eng',
+                    action: 'getArticles',
+                    keyword: 'USA',
+                    includeArticleImage: true,
+                    articlesPage: 1,
+                    articlesCount: 4,
+                    articlesSortBy: 'date',
+                    articlesSortByAsc: false,
+                    articlesArticleBodyLen: -1,
+                    resultType: 'articles',
+                    dataType: ['news', 'pr'],
+                    apiKey: process.env.REACT_APP_API_HOME1,
+                    forceMaxDataTimeWindow: 31,
                 },
             })
             .then((res) => {
-                setArticles(res.data.articles);
+                setArticles(res.data.articles.results);
             });
-    });
+    }, []);
     return (
         <div className="news-homeblock2 py-5">
             <div className="container py-lg-5 py-md-4">

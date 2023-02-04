@@ -10,4 +10,5 @@ export const routes: RouteType[] = [
     { path: '/', component: Page.Home, layout: DefaultLayout },
     { path: '/category/:category', component: Page.Category, layout: DefaultLayout },
     { path: '/search', component: Page.Search, layout: DefaultLayout },
+    { path: '/article/:uid', component: Page.Article, layout: DefaultLayout },
 ];

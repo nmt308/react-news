@@ -38,8 +38,8 @@ export default function HomeSlide() {
                         className="owl-theme mb-md-0 mb-sm-5 mb-4"
                     >
                         <SlideItem
-                            name="Healthy"
-                            title=" Create an Art that shows the Healthy in everyone’s ideas of flaws."
+                            name="Health"
+                            title=" Create an Art that shows the Health in everyone’s ideas of flaws."
                             message="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sit id accusantium
                                         officia quod quasi necessitatibus perspiciatis Harum error provident quibusdam
                                         tenetur. Ut fermentum leo quis sapienet faucibus, at scelerisque sem feugiat.
@@ -56,8 +56,8 @@ export default function HomeSlide() {
                             image={sports}
                         />
                         <SlideItem
-                            name="Entertainment"
-                            title=" Deals with information of the entertainment industry among others."
+                            name="Recreation"
+                            title=" Deals with information of the recreation industry among others."
                             message="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sit id accusantium
                                         officia quod quasi necessitatibus perspiciatis Harum error provident quibusdam
                                         tenetur. Ut fermentum leo quis sapienet faucibus, at scelerisque sem feugiat.

@@ -16,7 +16,7 @@ export default function Home() {
             <HomeBlock3 />
             <HomeBlock4 className="news-homeblock2 py-5" category="Sports" />
             <HomeBlock4 className="news-homeblock2 news-homeblock5 py-5" category="Business" />
-            <HomeBlock4 className="news-homeblock2 news-homeblock6 py-5" category="Entertainment" />
+            <HomeBlock4 className="news-homeblock2 news-homeblock6 py-5" category="Recreation" />
             <div className="news-subscribe py-5">
                 <div className="container py-lg-5 py-md-4">
                     <div className="news-subscribe-content text-center bg-clr-white py-md-5 py-2">
