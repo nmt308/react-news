@@ -7,30 +7,30 @@ import SkeletonLoading from '../ArticleItem/skeleton';
 export default function HomeBlock4({ category, className }: { category: string; className: string }) {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
-    // useEffect(() => {
-    //     request
-    //         .get('/article/getArticles', {
-    //             params: {
-    //                 lang: 'eng',
-    //                 action: 'getArticles',
-    //                 keyword: category,
-    //                 includeArticleImage: true,
-    //                 articlesPage: 1,
-    //                 articlesCount: 3,
-    //                 articlesSortBy: 'date',
-    //                 articlesSortByAsc: false,
-    //                 articlesArticleBodyLen: -1,
-    //                 resultType: 'articles',
-    //                 dataType: ['news', 'pr'],
-    //                 apiKey: process.env.REACT_APP_API_HOME1,
-    //                 forceMaxDataTimeWindow: 31,
-    //             },
-    //         })
-    //         .then((res) => {
-    //             setArticles(res.data.articles.results);
-    //             setLoading(false);
-    //         });
-    // }, []);
+    useEffect(() => {
+        request
+            .get('/article/getArticles', {
+                params: {
+                    lang: 'eng',
+                    action: 'getArticles',
+                    keyword: category,
+                    includeArticleImage: true,
+                    articlesPage: 1,
+                    articlesCount: 3,
+                    articlesSortBy: 'date',
+                    articlesSortByAsc: false,
+                    articlesArticleBodyLen: -1,
+                    resultType: 'articles',
+                    dataType: ['news', 'pr'],
+                    apiKey: process.env.REACT_APP_API_KEY3,
+                    forceMaxDataTimeWindow: 31,
+                },
+            })
+            .then((res) => {
+                setArticles(res.data.articles.results);
+                setLoading(false);
+            });
+    }, []);
     const renderArticles = () => {
         if (articles.length > 0 && !loading) {
             return articles.map((article) => {

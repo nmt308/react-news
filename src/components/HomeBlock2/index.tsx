@@ -8,30 +8,30 @@ import SkeletonLoading from '../ArticleItem/skeleton';
 export default function HomeBlock2() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
-    // useEffect(() => {
-    //     request
-    //         .get('/article/getArticles', {
-    //             params: {
-    //                 lang: 'eng',
-    //                 action: 'getArticles',
-    //                 keyword: 'USA',
-    //                 includeArticleImage: true,
-    //                 articlesPage: 1,
-    //                 articlesCount: 4,
-    //                 articlesSortBy: 'date',
-    //                 articlesSortByAsc: false,
-    //                 articlesArticleBodyLen: -1,
-    //                 resultType: 'articles',
-    //                 dataType: ['news', 'pr'],
-    //                 apiKey: process.env.REACT_APP_API_HOME1,
-    //                 forceMaxDataTimeWindow: 31,
-    //             },
-    //         })
-    //         .then((res) => {
-    //             setLoading(false);
-    //             setArticles(res.data.articles.results);
-    //         });
-    // }, []);
+    useEffect(() => {
+        request
+            .get('/article/getArticles', {
+                params: {
+                    lang: 'eng',
+                    action: 'getArticles',
+                    keyword: 'USA',
+                    includeArticleImage: true,
+                    articlesPage: 1,
+                    articlesCount: 4,
+                    articlesSortBy: 'date',
+                    articlesSortByAsc: false,
+                    articlesArticleBodyLen: -1,
+                    resultType: 'articles',
+                    dataType: ['news', 'pr'],
+                    apiKey: process.env.REACT_APP_API_KEY2,
+                    forceMaxDataTimeWindow: 31,
+                },
+            })
+            .then((res) => {
+                setLoading(false);
+                setArticles(res.data.articles.results);
+            });
+    }, []);
     const renderArticles = () => {
         if (articles.length > 0 && !loading) {
             return articles.map((article) => {
@@ -63,7 +63,7 @@ export default function HomeBlock2() {
                         <div className="row">{renderArticles()}</div>
                         <div className="mt-4 left-right bg-clr-white p-3">
                             <h3 className="section-title-left align-self pl-2 mb-sm-0 mb-3">Advertise with us </h3>
-                            <a className="btn btn-style btn-primary" href="https://newsapi.org/pricing" target="_blank">
+                            <a className="btn btn-style btn-primary" href="https://newsapi.ai/pricing" target="_blank">
                                 Learn more
                             </a>
                         </div>

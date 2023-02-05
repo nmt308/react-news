@@ -698,18 +698,6 @@ button,
     display: block;
 }
 
-.d-grid {
-    display: grid;
-}
-
-.align-self {
-    align-self: center;
-}
-
-.align-end {
-    align-self: end;
-}
-
 button,
 input,
 select,
@@ -1127,24 +1115,6 @@ button:focus {
     top: 15px;
 }
 
-@-webkit-keyframes rotation-show {
-    0% {
-        transform: perspective(1000px) rotateX(-90deg);
-    }
-    100% {
-        transform: perspective(1000px) translateY(0);
-    }
-}
-
-@keyframes rotation-show {
-    0% {
-        transform: perspective(1000px) rotateX(-90deg);
-    }
-    100% {
-        transform: perspective(1000px) translateY(0);
-    }
-}
-
 @media (max-width: 992px) {
     .news-header nav .search-bar {
         max-width: 800px;
@@ -1501,8 +1471,7 @@ button:focus {
 .blog-meta {
     width: 100%;
 }
-.meta-item.blog-lesson {
-}
+
 .news-homeblock2 ul.blog-meta li a {
     font-size: 18px;
     color: var(--heading-color);
@@ -2071,7 +2040,6 @@ a.blog-desc:hover {
     top: 50%;
     margin-left: -40px;
     margin-top: -40px;
-
     cursor: pointer;
     z-index: 1;
     -webkit-backface-visibility: hidden;
@@ -2253,11 +2221,6 @@ button.owl-next {
     line-height: 45px;
     margin-top: 30px;
     color: #232527;
-}
-
-.prev-next {
-    display: flex;
-    justify-content: space-between;
 }
 
 .text-11 .text11-content ul.blog-list {
@@ -3167,59 +3130,6 @@ ul.blog-cat li a span.fa {
     }
 }
 
-.map-content-5 {
-    background-color: var(--bg-color);
-    box-shadow: rgba(1, 1, 1, 0.05) 1px 1px 5px 0px;
-    padding: 35px;
-    border-radius: var(--border-radius-full);
-}
-
-.address-grid h6 {
-    font-size: 20px;
-    line-height: 25px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    font-family: 'Hind', sans-serif;
-    letter-spacing: -0.5px;
-}
-
-.address-grid a {
-    font-size: 18px;
-    line-height: 28px;
-    color: var(--para-color);
-    display: block;
-}
-
-.address-grid a:hover {
-    color: var(--primary-color);
-}
-
-.contacts-sub-5 iframe {
-    width: 100%;
-    height: 450px;
-    display: block;
-    filter: var(--iframe-filter);
-    -webkit-filter: var(--iframe-filter);
-    -moz-filter: var(--iframe-filter);
-    -ms-filter: var(--iframe-filter);
-    -o-filter: var(--iframe-filter);
-}
-
-@media (max-width: 736px) {
-    .form-grids {
-        grid-template-columns: 1fr;
-        grid-gap: 15px;
-    }
-    .contacts-sub-5 iframe {
-        height: 350px;
-    }
-}
-
-@media (max-width: 480px) {
-    form.signin-form {
-        padding: 25px;
-    }
-}
 @media (max-width: 575px) {
     .skeleton-avt {
         margin: 18px auto 0 18px;

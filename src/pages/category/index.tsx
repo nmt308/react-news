@@ -57,7 +57,7 @@ export default function Category() {
                             articlesArticleBodyLen: -1,
                             resultType: 'articles',
                             dataType: ['news', 'pr'],
-                            apiKey: process.env.REACT_APP_API_HOME1,
+                            apiKey: process.env.REACT_APP_API_KEY1,
                             forceMaxDataTimeWindow: 31,
                         },
                     })

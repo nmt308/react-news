@@ -73,47 +73,47 @@ export default function ArticleDetail() {
         });
     };
 
-    useEffect(() => {
-        const getArticle = async () => {
-            await request
-                .get('/article/getArticle', {
-                    params: {
-                        lang: 'eng',
-                        action: 'getArticles',
-                        articleUri: uid,
-                        includeArticleImage: true,
-                        articlesArticleBodyLen: -1,
-                        dataType: ['news', 'pr'],
-                        apiKey: process.env.REACT_APP_API_HOME1,
-                    },
-                })
-                .then((res) => {
-                    setDetail(res.data[`${uid}`].info);
-                });
-            await request
-                .get('/article/getArticles', {
-                    params: {
-                        lang: 'eng',
-                        action: 'getArticles',
-                        keyword: 'Europe',
-                        includeArticleImage: true,
-                        articlesCount: 4,
-                        articlesSortBy: 'date',
-                        articlesSortByAsc: false,
-                        articlesArticleBodyLen: -1,
-                        resultType: 'articles',
-                        dataType: ['news', 'pr'],
-                        apiKey: process.env.REACT_APP_API_HOME1,
-                        forceMaxDataTimeWindow: 31,
-                    },
-                })
-                .then((res) => {
-                    setArticles(res.data.articles.results);
-                });
-        };
-        getArticle();
-    }, [uid]);
-    return articles.length === 0 ? (
+    // useEffect(() => {
+    //     const getArticle = async () => {
+    //         await request
+    //             .get('/article/getArticle', {
+    //                 params: {
+    //                     lang: 'eng',
+    //                     action: 'getArticles',
+    //                     articleUri: uid,
+    //                     includeArticleImage: true,
+    //                     articlesArticleBodyLen: -1,
+    //                     dataType: ['news', 'pr'],
+    //                     apiKey: process.env.REACT_APP_API_KEY3,
+    //                 },
+    //             })
+    //             .then((res) => {
+    //                 setDetail(res.data[`${uid}`].info);
+    //             });
+    //         await request
+    //             .get('/article/getArticles', {
+    //                 params: {
+    //                     lang: 'eng',
+    //                     action: 'getArticles',
+    //                     keyword: 'Europe',
+    //                     includeArticleImage: true,
+    //                     articlesCount: 4,
+    //                     articlesSortBy: 'date',
+    //                     articlesSortByAsc: false,
+    //                     articlesArticleBodyLen: -1,
+    //                     resultType: 'articles',
+    //                     dataType: ['news', 'pr'],
+    //                     apiKey: process.env.REACT_APP_API_KEY3,
+    //                     forceMaxDataTimeWindow: 31,
+    //                 },
+    //             })
+    //             .then((res) => {
+    //                 setArticles(res.data.articles.results);
+    //             });
+    //     };
+    //     getArticle();
+    // }, [uid]);
+    return true ? (
         <Loading />
     ) : (
         <section className="text-11 py-5">

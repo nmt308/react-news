@@ -13,7 +13,7 @@ export default function Footer() {
                                 </a>
                                 <p className="copy-footer-28"> © 2023. All Rights Reserved. </p>
                                 <h5 className="mt-2">
-                                    Get articles with <a href="https://newsapi.org/">News API</a>
+                                    Get articles with <a href="https://newsapi.ai/">News API</a>
                                 </h5>
                             </div>
                             <div className="col-lg-8 row">
