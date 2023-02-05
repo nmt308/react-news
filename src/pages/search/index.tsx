@@ -42,38 +42,38 @@ export default function Search() {
         window.scrollTo(0, 0);
     }, [page]);
 
-    useEffect(() => {
-        const getArticles = async () => {
-            try {
-                request
-                    .get('/article/getArticles', {
-                        params: {
-                            lang: 'eng',
-                            action: 'getArticles',
-                            keyword: q,
-                            includeArticleImage: true,
-                            articlesPage: page,
-                            articlesCount: 10,
-                            articlesSortBy: 'date',
-                            articlesSortByAsc: false,
-                            articlesArticleBodyLen: -1,
-                            resultType: 'articles',
-                            dataType: ['news', 'pr'],
-                            apiKey: process.env.REACT_APP_API_HOME1,
-                            forceMaxDataTimeWindow: 31,
-                        },
-                    })
-                    .then((res) => {
-                        setArticles(res.data.articles.results);
-                        setLoading(false);
-                        setCount(res.data.articles.pages);
-                    });
-            } catch {
-                setLoading(false);
-            }
-        };
-        getArticles();
-    }, [page, q]);
+    // useEffect(() => {
+    //     const getArticles = async () => {
+    //         try {
+    //             request
+    //                 .get('/article/getArticles', {
+    //                     params: {
+    //                         lang: 'eng',
+    //                         action: 'getArticles',
+    //                         keyword: q,
+    //                         includeArticleImage: true,
+    //                         articlesPage: page,
+    //                         articlesCount: 10,
+    //                         articlesSortBy: 'date',
+    //                         articlesSortByAsc: false,
+    //                         articlesArticleBodyLen: -1,
+    //                         resultType: 'articles',
+    //                         dataType: ['news', 'pr'],
+    //                         apiKey: process.env.REACT_APP_API_HOME1,
+    //                         forceMaxDataTimeWindow: 31,
+    //                     },
+    //                 })
+    //                 .then((res) => {
+    //                     setArticles(res.data.articles.results);
+    //                     setLoading(false);
+    //                     setCount(res.data.articles.pages);
+    //                 });
+    //         } catch {
+    //             setLoading(false);
+    //         }
+    //     };
+    //     getArticles();
+    // }, [page, q]);
 
     return (
         <div className="news-homeblock2 news-homeblock5 py-5">
