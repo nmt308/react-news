@@ -72,7 +72,6 @@ export default function ArticleDetail() {
             );
         });
     };
-
     useEffect(() => {
         const getArticle = async () => {
             await request
@@ -141,7 +140,7 @@ export default function ArticleDetail() {
                                         <p>
                                             {' '}
                                             By{' '}
-                                            <a target="_blank" href={`${detail?.source.uri}`}>
+                                            <a target="_blank" href={`https://www.${detail?.source.uri}`}>
                                                 <strong>{detail?.source.title || 'Thomas Jahme'}</strong>
                                             </a>
                                         </p>
@@ -195,7 +194,7 @@ export default function ArticleDetail() {
 
                                 <div>
                                     Source:{' '}
-                                    <a target="_blank" href={`${detail?.source.uri}`}>
+                                    <a target="_blank" href={`https://www.${detail?.source.uri}`}>
                                         {detail?.source.uri}
                                     </a>{' '}
                                     - {detail?.source.title}
@@ -243,20 +242,20 @@ export default function ArticleDetail() {
                                             <h4>About source</h4>
                                         </div>
                                         <div className="author-detalis">
-                                            <a target="_blank" href={`${detail?.source.uri}`} className="author-image">
+                                            <a href={`https://www.${detail?.source.uri}`} className="author-image">
                                                 <img alt="error" src={NotImage} className="h-100 img-fluid" />
                                             </a>
                                             <div className="author-info">
                                                 <a
                                                     target="_blank"
-                                                    href={`${detail?.source.uri}`}
+                                                    href={`https://www.${detail?.source.uri}`}
                                                     className="author-name"
                                                 >
                                                     {detail?.source.title}
                                                 </a>
                                                 <a
                                                     target="_blank"
-                                                    href={`${detail?.source.uri}`}
+                                                    href={`https://www.${detail?.source.uri}`}
                                                     className="btn btn-outline-primary"
                                                 >
                                                     Visit site{' '}
